@@ -17,11 +17,11 @@ class OpeningScreen extends StatelessWidget {
                 'assets/images/opening.png',
                 height: 450,
               ),
-              Text(
+              const Text(
                 'Explore the app',
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 35),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 15,
               ),
               Text('"Easy and quick sign-in – start using our app instantly!"'),

@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:speedshiping2/core/routing/routes.dart';
-import 'package:speedshiping2/features/onboarding/ui/screens/language_screen.dart';
-
-import '../../../../core/routing/app_router.dart';
 import '../../../../core/shared_widgets/my_button.dart';
 import '../widgets/onboarding_text_container.dart';
 import '../widgets/onboaring_upper_circle.dart';
@@ -42,7 +39,7 @@ class OnBoardingscreen extends StatelessWidget {
         MyButton(
             text: 'Next',
             onPressed: () {
-              if (_pageController == 2.0) {
+              if (_pageController.page == 2.0) {
                 Navigator.pushNamed(context, Routes.languageScreen);
               } else {
                 _pageController.nextPage(

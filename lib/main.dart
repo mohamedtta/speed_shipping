@@ -15,13 +15,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-          appBarTheme: AppBarTheme(
+          appBarTheme: const AppBarTheme(
               systemOverlayStyle: SystemUiOverlayStyle(
         statusBarColor: Colors.transparent,
       ))),
       debugShowCheckedModeBanner: false,
       title: 'Speed Shipping',
-      initialRoute: Routes.openingScreen,
+      initialRoute: Routes.onBoardingScreen,
       onGenerateRoute: AppRouter.generateRoute,
     );
   }

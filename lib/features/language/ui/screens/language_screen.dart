@@ -5,6 +5,7 @@ import 'package:speedshiping2/core/theming/app_colors.dart';
 import 'package:speedshiping2/features/onboarding/ui/widgets/onboaring_upper_circle.dart';
 
 class LanguageScreen extends StatelessWidget {
+
   @override
   List<Language> languages = [
     Language(title: 'English', image: 'assets/images/english.png'),
@@ -30,7 +31,7 @@ class LanguageScreen extends StatelessWidget {
               )),
             ],
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           Expanded(
@@ -44,7 +45,7 @@ class LanguageScreen extends StatelessWidget {
                               height: 55,
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(8),
-                                color: Color(0xffF4F5F6),
+                                color: const Color(0xffF4F5F6),
                               ),
                               child: Card(
                                 child: Row(
@@ -53,7 +54,7 @@ class LanguageScreen extends StatelessWidget {
                                       languages[i].image,
                                       height: 30,
                                     ),
-                                    SizedBox(
+                                    const SizedBox(
                                       width: 10,
                                     ),
                                     Text(languages[i].title)
@@ -65,12 +66,12 @@ class LanguageScreen extends StatelessWidget {
                         ),
                       ],
                     ),
-                separatorBuilder: (context, i) => SizedBox(
+                separatorBuilder: (context, i) => const SizedBox(
                       height: 20,
                     ),
                 itemCount: languages.length),
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           MyButton2(
@@ -78,7 +79,7 @@ class LanguageScreen extends StatelessWidget {
               onPressed: () {},
               color: AppColors.myOrange,
               textColor: Colors.white),
-          SizedBox(
+          const SizedBox(
             height: 5,
           ),
         ],
