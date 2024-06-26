@@ -27,7 +27,7 @@ class LanguageScreen extends StatelessWidget {
             children: [
               Expanded(
                   child: OnboaringUpperCircle(
-                text: 'Choose the language',
+                text: 'Choose the languages',
               )),
             ],
           ),
