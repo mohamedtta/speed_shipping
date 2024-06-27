@@ -1,10 +1,19 @@
+import 'package:device_preview/device_preview.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'core/routing/app_router.dart';
 import 'core/routing/routes.dart';
 
+
 void main() {
-  runApp(const MyApp());
+  runApp(
+    DevicePreview(
+      enabled: !kReleaseMode,
+        builder: (context)=> const MyApp()
+    )
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -13,16 +22,24 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData(
-          appBarTheme: const AppBarTheme(
-              systemOverlayStyle: SystemUiOverlayStyle(
-        statusBarColor: Colors.transparent,
-      ))),
-      debugShowCheckedModeBanner: false,
-      title: 'Speed Shipping',
-      initialRoute: Routes.onBoardingScreen,
-      onGenerateRoute: AppRouter.generateRoute,
+    return ScreenUtilInit(
+      designSize: const Size(393, 852),
+      minTextAdapt: true,
+      splitScreenMode: true,
+      builder: (_,child){
+        return MaterialApp(
+          builder: DevicePreview.appBuilder,
+          theme: ThemeData(
+              appBarTheme: const AppBarTheme(
+                  systemOverlayStyle: SystemUiOverlayStyle(
+                    statusBarColor: Colors.transparent,
+                  ))),
+          debugShowCheckedModeBanner: false,
+          title: 'Speed Shipping',
+          initialRoute: Routes.onBoardingScreen,
+          onGenerateRoute: AppRouter.generateRoute,
+        );
+      },
     );
   }
 }

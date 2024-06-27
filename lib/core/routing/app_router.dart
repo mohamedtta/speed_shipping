@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:speedshiping2/core/routing/routes.dart';
-import '../../features/language/ui/screens/language_screen.dart';
+import '../../features/onboarding/ui/screens/language_screen.dart';
 import '../../features/onboarding/ui/screens/onboardingscreen.dart';
 import '../../features/onboarding/ui/screens/opening_screen.dart';
 

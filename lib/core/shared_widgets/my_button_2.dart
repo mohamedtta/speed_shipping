@@ -17,29 +17,19 @@ class MyButton2 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 10),
-      child: Row(
-        children: [
-          Expanded(
-            child: Container(
-              child: MaterialButton(
-                height: 50,
-                onPressed: onPressed,
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 45, vertical: 10),
-                shape: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8),
-                    borderSide: BorderSide.none),
-                color: color,
-                child: Text(
-                  text,
-                  style: TextStyle(color: textColor, fontSize: 18),
-                ),
-              ),
-            ),
-          ),
-        ],
+    return MaterialButton(
+      minWidth: MediaQuery.of(context).size.width * 0.89,
+      height: MediaQuery.of(context).size.height * 0.065,
+      onPressed: onPressed,
+      padding:
+          const EdgeInsets.symmetric(horizontal: 45, vertical: 10),
+      shape: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(8),
+          borderSide: BorderSide.none),
+      color: color,
+      child: Text(
+        text,
+        style: TextStyle(color: textColor, fontSize: MediaQuery.of(context).size.width * 0.04),
       ),
     );
   }

@@ -1,29 +1,28 @@
 import 'package:flutter/material.dart';
-
-import '../../../../core/theming/app_theme.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class OnboardingTextContainer extends StatelessWidget {
   String text;
-
-  OnboardingTextContainer({super.key, required this.text});
+  String image;
+  OnboardingTextContainer({super.key, required this.text , required this.image});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(20),
-      width: 263,
+      width: MediaQuery.of(context).size.width * 0.66,
+      padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width * 0.1 ,vertical: MediaQuery.of(context).size.width * 0.1 ),
       alignment: Alignment.center,
       decoration: BoxDecoration(
-          color: Colors.white, borderRadius: BorderRadius.circular(15)),
+          color: Colors.white, borderRadius: BorderRadius.circular(26.r)),
       child: Column(
         children: [
           Text(
             text,
-            style: AppTheme.onBoardingFontStyle,
+            style: TextStyle(fontSize:  MediaQuery.of(context).size.width * 0.03,fontWeight: FontWeight.bold),
           ),
-          Image.asset('assets/images/cars.png')
+          Image.asset(image)
         ],
       ),
     );
-  }
+    }
 }

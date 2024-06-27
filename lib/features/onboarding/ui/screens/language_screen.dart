@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:speedshiping2/core/entities/language.dart';
 import 'package:speedshiping2/core/shared_widgets/my_button_2.dart';
 import 'package:speedshiping2/core/theming/app_colors.dart';
 import 'package:speedshiping2/features/onboarding/ui/widgets/onboaring_upper_circle.dart';
+
+import '../../../../core/routing/routes.dart';
 
 class LanguageScreen extends StatelessWidget {
 
@@ -20,17 +23,12 @@ class LanguageScreen extends StatelessWidget {
   ];
 
   Widget build(BuildContext context) {
+    double heightScreen = MediaQuery.of(context).size.height;
+    double widthScreen = MediaQuery.of(context).size.width;
     return Scaffold(
       body: Column(
         children: [
-          Row(
-            children: [
-              Expanded(
-                  child: OnboaringUpperCircle(
-                text: 'Choose the language',
-              )),
-            ],
-          ),
+          OnboaringUpperCircle(text: 'Choose the language',),
           const SizedBox(
             height: 20,
           ),
@@ -42,9 +40,9 @@ class LanguageScreen extends StatelessWidget {
                           child: Padding(
                             padding: const EdgeInsets.symmetric(horizontal: 10),
                             child: Container(
-                              height: 55,
+                              height: heightScreen * 0.058,
                               decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(8),
+                                borderRadius: BorderRadius.circular(widthScreen * 0.025),
                                 color: const Color(0xffF4F5F6),
                               ),
                               child: Card(
@@ -52,12 +50,12 @@ class LanguageScreen extends StatelessWidget {
                                   children: [
                                     Image.asset(
                                       languages[i].image,
-                                      height: 30,
+                                      height: heightScreen * 0.035,
                                     ),
-                                    const SizedBox(
-                                      width: 10,
+                                    SizedBox(
+                                      width: 20.w,
                                     ),
-                                    Text(languages[i].title)
+                                    Text(languages[i].title,style: TextStyle(fontSize: widthScreen * 0.04),)
                                   ],
                                 ),
                               ),
@@ -66,17 +64,19 @@ class LanguageScreen extends StatelessWidget {
                         ),
                       ],
                     ),
-                separatorBuilder: (context, i) => const SizedBox(
-                      height: 20,
+                separatorBuilder: (context, i) => SizedBox(
+                      height: 25.h,
                     ),
                 itemCount: languages.length),
           ),
-          const SizedBox(
-            height: 20,
+          SizedBox(
+            height: 25.h,
           ),
           MyButton2(
               text: 'Continue',
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(context, Routes.openingScreen);
+              },
               color: AppColors.myOrange,
               textColor: Colors.white),
           const SizedBox(
