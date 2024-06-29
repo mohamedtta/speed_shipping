@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../theming/app_colors.dart';
@@ -17,19 +18,22 @@ class MyButton2 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialButton(
-      minWidth: MediaQuery.of(context).size.width * 0.89,
-      height: MediaQuery.of(context).size.height * 0.065,
-      onPressed: onPressed,
-      padding:
-          const EdgeInsets.symmetric(horizontal: 45, vertical: 10),
-      shape: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(8),
-          borderSide: BorderSide.none),
-      color: color,
-      child: Text(
-        text,
-        style: TextStyle(color: textColor, fontSize: MediaQuery.of(context).size.width * 0.04),
+    double widthScreen = MediaQuery.of(context).size.width;
+    double heightScreen = MediaQuery.of(context).size.height;
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: widthScreen * 0.05),
+      child: MaterialButton(
+        minWidth: double.infinity,
+        onPressed: onPressed,
+        padding: EdgeInsets.symmetric(vertical: heightScreen * 0.02 ),
+        shape: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(MediaQuery.of(context).size.width * 0.02),
+            borderSide: BorderSide.none),
+        color: color,
+        child: Text(
+          text,
+          style: Theme.of(context).textTheme.bodyMedium!.copyWith(color: textColor),
+        ),
       ),
     );
   }

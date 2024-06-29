@@ -38,6 +38,11 @@ dependencies:
   google_fonts: ^6.1.9
   flutter_screenutil: ^5.9.3
   device_preview: ^1.1.0
+  shared_preferences: ^2.2.3
+  flutter_bloc: ^8.1.6
+  intl: ^0.19.0
+  flutter_localizations:
+    sdk: flutter
 
 
 dev_dependencies:
@@ -92,3 +97,5 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+flutter_intl:
+  enabled: true
