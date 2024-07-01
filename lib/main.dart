@@ -1,22 +1,34 @@
 import 'package:device_preview/device_preview.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'core/routing/app_router.dart';
 import 'core/routing/routes.dart';
-import 'generated/l10n.dart';
 
 late SharedPreferences sharedPreferences;
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   sharedPreferences = await SharedPreferences.getInstance();
+  await EasyLocalization.ensureInitialized();
   runApp(
       DevicePreview(
           enabled: !kReleaseMode,
-          builder: (context) => const MyApp()
+          builder: (context) => EasyLocalization(
+              supportedLocales: const [
+                Locale('en'),
+                Locale('ar'),
+                Locale('fr'),
+                Locale('de'),
+                Locale('hi'),
+                Locale('zh'),
+                Locale('ru'),
+                Locale('es'),
+              ],
+              path: 'assets/localization',
+              child: const MyApp())
       )
   );
 }
@@ -33,14 +45,9 @@ class MyApp extends StatelessWidget {
       splitScreenMode: true,
       builder: (_, child) {
         return MaterialApp(
-          locale: Locale(sharedPreferences.getString('lang') == null ? 'end' : sharedPreferences.getString('lang')!),
-          localizationsDelegates: const [
-            S.delegate,
-            GlobalMaterialLocalizations.delegate,
-            GlobalWidgetsLocalizations.delegate,
-            GlobalCupertinoLocalizations.delegate,
-          ],
-          supportedLocales: S.delegate.supportedLocales,
+          locale: context.locale,
+          localizationsDelegates: context.localizationDelegates,
+          supportedLocales: context.supportedLocales,
           builder: DevicePreview.appBuilder,
           theme: ThemeData(
             textTheme: TextTheme(

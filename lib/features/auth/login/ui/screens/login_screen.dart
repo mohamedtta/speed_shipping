@@ -1,10 +1,10 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:speedshiping2/core/shared_widgets/my_button_2.dart';
 import 'package:speedshiping2/core/shared_widgets/my_form.dart';
 import 'package:speedshiping2/core/theming/app_colors.dart';
 
-import '../../../../../generated/l10n.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -22,7 +22,7 @@ class LoginScreen extends StatelessWidget {
           MyForm(formText: 'Password', upperText: 'Password',controller: controller ,),
           TextButton(onPressed: (){}, child: Text('Forgot password?',style: Theme.of(context).textTheme.bodySmall,)),
           SizedBox(height: 150.h),
-          Center(child: MyButton2(text: S.of(context).login, onPressed: (){}, color: AppColors.myOrange, textColor: AppColors.myWhite))
+          Center(child: MyButton2(text: 'login'.tr(), onPressed: (){}, color: AppColors.myOrange, textColor: AppColors.myWhite))
         ],
       ),
 

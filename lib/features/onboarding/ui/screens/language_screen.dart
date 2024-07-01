@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:speedshiping2/core/shared_widgets/my_button_2.dart';
@@ -5,7 +6,6 @@ import 'package:speedshiping2/core/theming/app_colors.dart';
 import 'package:speedshiping2/features/onboarding/ui/widgets/onboaring_upper_circle.dart';
 import 'package:speedshiping2/main.dart';
 import '../../../../core/routing/routes.dart';
-import '../../../../generated/l10n.dart';
 import '../../data/language_data.dart';
 
 class LanguageScreen extends StatefulWidget {
@@ -38,7 +38,7 @@ class _LanguageScreenState extends State<LanguageScreen> {
                               onTap: (){
                                 setState(() {
                                   sharedPreferences.setString('lang', languages[i].code!);
-                                  S.load(Locale(languages[i].code!));
+                                  context.setLocale(Locale(languages[i].code!));
                                 });
                               },
                               child: Container(

@@ -1,9 +1,9 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:speedshiping2/core/routing/routes.dart';
 import 'package:speedshiping2/core/shared_widgets/my_button_2.dart';
 import '../../../../core/theming/app_colors.dart';
-import '../../../../generated/l10n.dart';
 
 class OpeningScreen extends StatelessWidget {
   const OpeningScreen({super.key});
@@ -31,15 +31,15 @@ class OpeningScreen extends StatelessWidget {
                 height: heightScreen * 0.54,
               ),
               Text(
-                S.of(context).openingtitle,
+                'openingtitle'.tr(),
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: widthScreen * 0.08),
               ),
-              Text(S.of(context).openingbody,style: TextStyle(fontSize: widthScreen * 0.04),),
+              Text('openingbody'.tr(),style: TextStyle(fontSize: widthScreen * 0.04),),
               SizedBox(
                 height: 20.h,
               ),
               MyButton2(
-                  text: S.of(context).login,
+                  text: 'login'.tr(),
                   onPressed: () {
                     Navigator.pushNamed(context, Routes.loginScreen);
                   },
@@ -49,7 +49,7 @@ class OpeningScreen extends StatelessWidget {
                 height: 10.h,
               ),
               MyButton2(
-                  text: S.of(context).register,
+                  text: 'register'.tr(),
                   onPressed: () {},
                   color: AppColors.myWhite,
                   textColor: Colors.black),

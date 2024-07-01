@@ -1,8 +1,8 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:speedshiping2/core/routing/routes.dart';
 import '../../../../core/shared_widgets/my_button.dart';
-import '../../../../generated/l10n.dart';
 import '../widgets/onboarding_text_container.dart';
 import '../widgets/onboaring_upper_circle.dart';
 
@@ -14,9 +14,9 @@ class OnBoardingscreen extends StatelessWidget {
     double heightScreen = MediaQuery.of(context).size.height;
     PageController _pageController = PageController();
     List<String> textContainer = [
-      S.of(context).onboarding1title,
-      S.of(context).onboarding2title,
-      S.of(context).onboarding3title
+      'onboarding1title'.tr(),
+      'onboarding2title'.tr(),
+      'onboarding3title'.tr()
     ];
     return Scaffold(
         body: Column(
@@ -43,7 +43,7 @@ class OnBoardingscreen extends StatelessWidget {
         Padding(
           padding: EdgeInsets.only(bottom: 18.h),
           child: MyButton(
-              text: S.of(context).next,
+              text: 'next'.tr(),
               onPressed: () {
                 if (_pageController.page == 2.0) {
                   Navigator.pushNamed(context, Routes.openingScreen);
