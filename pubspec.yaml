@@ -40,6 +40,9 @@ dependencies:
   shared_preferences: ^2.2.3
   flutter_bloc: ^8.1.6
   easy_localization: ^3.0.7
+  flutter_svg: ^2.0.10+1
+  persistent_bottom_nav_bar: ^5.0.2
+
 
 
 dev_dependencies:

@@ -42,13 +42,14 @@ class _LanguageScreenState extends State<LanguageScreen> {
                                 });
                               },
                               child: Container(
-                                height: heightScreen * 0.058,
+                                height: heightScreen * 0.06,
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(widthScreen * 0.025),
                                   color: sharedPreferences.getString('lang') == languages[i].code ? Colors.red:Colors.white,
                                 ),
                                 child: Card(
                                   child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
                                       Image.asset(
                                         languages[i].image,

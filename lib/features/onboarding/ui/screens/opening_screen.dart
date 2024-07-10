@@ -50,7 +50,9 @@ class OpeningScreen extends StatelessWidget {
               ),
               MyButton2(
                   text: 'register'.tr(),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushNamed(context, Routes.registerScreen);
+                  },
                   color: AppColors.myWhite,
                   textColor: Colors.black),
               SizedBox(

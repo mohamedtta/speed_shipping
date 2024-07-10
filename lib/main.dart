@@ -51,7 +51,7 @@ class MyApp extends StatelessWidget {
           builder: DevicePreview.appBuilder,
           theme: ThemeData(
             textTheme: TextTheme(
-              bodyLarge: TextStyle(fontSize: MediaQuery.of(context).size.width * 0.07),
+              bodyLarge: TextStyle(fontSize: MediaQuery.of(context).size.width * 0.09,fontWeight: FontWeight.bold),
               bodyMedium: TextStyle(fontSize: MediaQuery.of(context).size.width * 0.05),
               bodySmall: TextStyle(fontSize: MediaQuery.of(context).size.width * 0.04),
             ),
