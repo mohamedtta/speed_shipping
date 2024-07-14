@@ -6,5 +6,13 @@
   "openingtitle": "Explorez l'application",
   "openingbody": "\"Connexion facile et rapide – commencez à utiliser\nnotre application immédiatement !\"",
   "login": "Connexion",
-  "register": "Créer un compte"
+  "register": "Créer un compte",
+  "pending": "Commandes en attente",
+  "ready": "Commandes prêtes",
+  "cancel": "Commandes annulées",
+  "request": "Demandes livrées",
+  "wallet": "Portefeuille",
+  "orders": "Commandes",
+  "Tracking": "Suivi",
+  "scan Qrcode": "Scanner le code QR"
 }

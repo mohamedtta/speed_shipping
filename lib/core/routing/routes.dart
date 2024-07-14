@@ -9,5 +9,7 @@ class Routes {
   static const String navScreen             = '/navScreen';
   static const String notificationScreen    = '/notificationScreen';
   static const String profileScreen         = '/profileScreen';
+  static const String readyOrdersScreen     = '/readyOrdersScreen';
+  static const String orderDetailsScreen    = '/orderDetailsScreen';
 
 }

@@ -9,27 +9,31 @@ class OrdersCountWidgets extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListTile(
-      title: Row(
-        children: [
-          Container(
-            alignment: Alignment.center,
-            width: MediaQuery.of(context).size.width * 0.12,
-            decoration: BoxDecoration(
-                border: Border.all(color: AppColors.appbarColor,width: 3),
-                borderRadius: BorderRadius.circular(16),
-                color: Colors.white),
-            child:Text(count,style: Theme.of(context).textTheme.bodySmall,),
-          ),
-          SizedBox(
-            width: 10.w,
-          ),
-          Text(
-            title,
-            style: Theme.of(context).textTheme.bodySmall!.copyWith(fontWeight: FontWeight.bold),
-          ),
-        ],
-      ),
+    double heightScreen = MediaQuery.of(context).size.height;
+    double widthScreen = MediaQuery.of(context).size.width;
+    return Padding(
+      padding: EdgeInsets.only(left: widthScreen * 0.05 , bottom: heightScreen * 0.02),
+      child: Row(
+          children: [
+            Container(
+              alignment: Alignment.center,
+              height: heightScreen * 0.05,
+              width: widthScreen * 0.12,
+              decoration: BoxDecoration(
+                  border: Border.all(color: AppColors.appbarColor,width: widthScreen * 0.003),
+                  borderRadius: BorderRadius.circular(widthScreen * 0.02),
+                  color: Colors.white),
+              child:Text(count,style: Theme.of(context).textTheme.bodySmall,),
+            ),
+            SizedBox(
+              width: widthScreen * 0.02,
+            ),
+            Text(
+              title,
+              style: Theme.of(context).textTheme.bodySmall!.copyWith(fontWeight: FontWeight.bold),
+            ),
+          ],
+        ),
     );
   }
 }

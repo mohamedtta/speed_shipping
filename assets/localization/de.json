@@ -6,5 +6,13 @@
   "openingtitle": "Erkunden Sie die App",
   "openingbody": "\"Einfache und schnelle Anmeldung – beginnen Sie sofort mit der Nutzung\nunserer App!\"",
   "login": "Anmelden",
-  "register": "Konto erstellen"
+  "register": "Konto erstellen",
+  "pending": "Ausstehende Bestellungen",
+  "ready": "Bereit Bestellungen",
+  "cancel": "Stornierte Bestellungen",
+  "request": "Gelieferte Anfragen",
+  "wallet": "Geldbörse",
+  "orders": "Bestellungen",
+  "Tracking": "Verfolgung",
+  "scan Qrcode": "QR-Code scannen"
 }

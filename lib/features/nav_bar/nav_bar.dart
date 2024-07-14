@@ -13,8 +13,8 @@ class NavBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return PersistentTabView(
       context,
-      screens: const [
-        HomeScreen(),
+      screens: [
+        HomeScreen(myContext: context,),
         NotificationScreen(),
         ProfileScreen()
       ],

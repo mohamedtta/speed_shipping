@@ -6,5 +6,13 @@
   "openingtitle": "Explore the app",
   "openingbody": "\"\"Easy and quick sign-in – start using\nour app instantly!\"\"",
   "login": "Login",
-  "register": "Create account"
+  "register": "Create account",
+    "pending" : "Pending orders",
+    "ready" : "Ready orders",
+    "cancel" : "Canceled orders",
+    "request" : "Delivered requests",
+    "wallet" : "Wallet",
+    "orders" : "Orders",
+    "Tracking" : "Tracking",
+    "scan Qrcode" : "Scan QR"
 }

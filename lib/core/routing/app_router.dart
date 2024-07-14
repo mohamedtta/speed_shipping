@@ -5,7 +5,9 @@ import 'package:speedshiping2/features/auth/login/ui/screens/register_screen.dar
 import 'package:speedshiping2/features/home/ui/home_screen.dart';
 import 'package:speedshiping2/features/nav_bar/nav_bar.dart';
 import 'package:speedshiping2/features/notification/notification_screen.dart';
-import 'package:speedshiping2/features/orders/ui/orders_screen.dart';
+import 'package:speedshiping2/features/orders/ui/screens/order_details_screen.dart';
+import 'package:speedshiping2/features/orders/ui/screens/orders_screen.dart';
+import 'package:speedshiping2/features/orders/ui/screens/ready_order_screen.dart';
 import 'package:speedshiping2/features/profile/profile_screen.dart';
 import '../../features/onboarding/ui/screens/language_screen.dart';
 import '../../features/onboarding/ui/screens/onboardingscreen.dart';
@@ -18,7 +20,6 @@ class AppRouter {
         return MaterialPageRoute(
           builder: (_) => const OnBoardingscreen(),
         );
-
       case Routes.languageScreen:
         return MaterialPageRoute(
           builder: (_) =>
@@ -38,7 +39,7 @@ class AppRouter {
         );
       case Routes.homeScreen:
         return MaterialPageRoute(
-          builder: (_) => const HomeScreen(),
+          builder: (_) => HomeScreen(myContext: _,),
         );
       case Routes.ordersScreen:
         return MaterialPageRoute(
@@ -55,6 +56,14 @@ class AppRouter {
       case Routes.navScreen:
         return MaterialPageRoute(
           builder: (_) => const NavBar(),
+        );
+      case Routes.readyOrdersScreen:
+        return MaterialPageRoute(
+          builder: (context) => const ReadyOrderScreen(),
+        );
+      case Routes.orderDetailsScreen:
+        return MaterialPageRoute(
+          builder: (context) => const OrderDetailsScreen(),
         );
 
       default:

@@ -6,5 +6,13 @@
   "openingtitle": "探索应用",
   "openingbody": "\"轻松快捷登录 – 立即开始使用\n我们的应用程序！\"",
   "login": "登录",
-  "register": "创建账户"
+  "register": "创建账户",
+  "pending": "待处理订单",
+  "ready": "已备订单",
+  "cancel": "取消订单",
+  "request": "已交付请求",
+  "wallet": "钱包",
+  "orders": "订单",
+  "Tracking": "追踪",
+  "scan Qrcode": "扫描二维码"
 }

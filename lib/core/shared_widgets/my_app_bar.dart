@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:speedshiping2/core/theming/app_colors.dart';
 import '../../features/home/ui/home_screen.dart';
 
@@ -37,14 +38,14 @@ class MyAppBar extends StatelessWidget {
                     padding: EdgeInsets.only(left: 50.w, top: 10.h),
                     child: Text(
                       'Hi, Ahmed',
-                      style: Theme.of(context).textTheme.bodyMedium,
+                      style: Theme.of(context).textTheme.bodyMedium!.copyWith(fontWeight: FontWeight.bold),
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsets.only(left: 50.w, top: 10.h),
+                    padding: EdgeInsets.only(left: 50.w),
                     child: Text(
                       'Welcome to',
-                      style: Theme.of(context).textTheme.bodyMedium,
+                      style: Theme.of(context).textTheme.bodyMedium!.copyWith(fontWeight: FontWeight.bold),
                     ),
                   ),
                   Padding(
@@ -54,8 +55,8 @@ class MyAppBar extends StatelessWidget {
                       style: Theme.of(context).textTheme.bodyMedium,
                     ),
                   ),
-                  const SizedBox(
-                    height: 80,
+                  SizedBox(
+                    height: MediaQuery.of(context).size.height * 0.05,
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.end,
@@ -71,7 +72,7 @@ class MyAppBar extends StatelessWidget {
                         padding: EdgeInsets.only(bottom: 10.h,right: 10.w),
                         child: CircleAvatar(
                           radius: widthScreen * 0.065,
-                          backgroundImage: AssetImage(item),
+                          child: SvgPicture.asset(item,width: 100,height: 100,),
                         ),
                       ),
                     ],
